@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Androidkotlin"
         tools:targetApi="31">
         <activity
-            android:name=".DaduActivity"
+            android:name=".TaskActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Androidkotlin">
@@ -24,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <!-- Permissions of internet -->
 
+    </application>
+    <!-- Permissions of internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
