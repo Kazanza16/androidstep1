@@ -12,6 +12,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.shape.CircleShape
@@ -26,6 +27,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,20 +45,10 @@ class TaskActivity : ComponentActivity() {
 }
 
 
-fun getScreenWidth(): Int {
-    return Resources.getSystem().displayMetrics.widthPixels
-}
-
-fun getScreenHeight(): Int {
-    return Resources.getSystem().displayMetrics.heightPixels
-}
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun showdrawFigure() {
-    val surfaceWidth = getScreenWidth() * 0.12681;
-    val surfaceHeight = getScreenHeight() * 0.1905;
-    
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -66,10 +58,13 @@ fun showdrawFigure() {
 
         Row(
             verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.weight(1f)
         ) {
             Surface(
                 color = Color(0xffDC052D),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+
+                modifier = Modifier
+                        .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -82,17 +77,18 @@ fun showdrawFigure() {
                         alignment = Alignment.Center,
                         modifier = Modifier
                             .padding(8.dp)
-                            .size(96.dp)
+                            .size(64.dp)
                             .clip(CircleShape)
+                            .border(2.dp,Color.White, CircleShape)
                     )
                     Text(
-                        text = "Manusia Gergaji",
+                        text = stringResource(com.example.androidkotlin.R.string.ManusiaGergaji),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "Indonesian",
+                        text = stringResource(com.example.androidkotlin.R.string.Indonesian),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
@@ -100,8 +96,9 @@ fun showdrawFigure() {
                 }
             }
             Surface(
-                color = Color(0xff004170),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+                color = Color(0xFFC35A05),
+                modifier = Modifier
+                    .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -115,18 +112,19 @@ fun showdrawFigure() {
                         alignment = Alignment.Center,
                         modifier = Modifier
                             .padding(8.dp)
-                            .size(96.dp)
+                            .size(64.dp)
                             .clip(CircleShape)
+                            .border(2.dp,Color.White, CircleShape)
                     )
 
                     Text(
-                        text = "Chēnsōman",
+                        text = stringResource(com.example.androidkotlin.R.string.Chēnsōman),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "Jaoanese",
+                        text = stringResource(com.example.androidkotlin.R.string.Japanese),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
@@ -134,8 +132,9 @@ fun showdrawFigure() {
                 }
             }
             Surface(
-                color = Color(0xFF673AB7),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+                color = Color(0xFFEFDA45),
+                modifier = Modifier
+                    .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -149,18 +148,19 @@ fun showdrawFigure() {
                         alignment = Alignment.Center,
                         modifier = Modifier
                             .padding(12.dp)
-                            .size(96.dp)
+                            .size(64.dp)
                             .clip(CircleShape)
+                            .border(2.dp,Color.White, CircleShape)
                     )
 
                     Text(
-                        text = "Hombre Motosierra",
+                        text = stringResource(com.example.androidkotlin.R.string.HombreMotosierra),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "Spanish)",
+                        text = stringResource(com.example.androidkotlin.R.string.Spanish),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
@@ -169,11 +169,13 @@ fun showdrawFigure() {
             }
         }
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.weight(1f)
         ) {
             Surface(
-                color = Color(0xff004D98),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+                color = Color(0xFF70E95D),
+                modifier = Modifier
+                    .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -187,17 +189,18 @@ fun showdrawFigure() {
                             alignment = Alignment.Center,
                             modifier = Modifier
                                 .padding(8.dp)
-                                .size(96.dp)
+                                .size(64.dp)
                                 .clip(CircleShape)
+                                .border(2.dp,Color.White, CircleShape)
                         )
                     Text(
-                        text = "رجل بالمنشار",
+                        text = stringResource(com.example.androidkotlin.R.string.Chainsaw),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "Arabic",
+                        text = stringResource(com.example.androidkotlin.R.string.Arabic),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
@@ -206,7 +209,8 @@ fun showdrawFigure() {
             }
             Surface(
                 color = Color(0xff6CABDD),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+                modifier = Modifier
+                    .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -220,17 +224,18 @@ fun showdrawFigure() {
                         alignment = Alignment.Center,
                         modifier = Modifier
                             .padding(8.dp)
-                            .size(96.dp)
+                            .size(64.dp)
                             .clip(CircleShape)
+                            .border(2.dp,Color.White, CircleShape)
                     )
                     Text(
-                        text = "Chainsaw Man",
+                        text = stringResource(com.example.androidkotlin.R.string.ChainsawMan),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "English",
+                        text = stringResource(com.example.androidkotlin.R.string.English),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
@@ -238,8 +243,9 @@ fun showdrawFigure() {
                 }
             }
             Surface(
-                color = Color(0xffDA291C),
-                modifier = Modifier.size(surfaceWidth.dp, surfaceHeight.dp)
+                color = Color(0xFFDF76ED),
+                modifier = Modifier
+                    .weight(1f)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -252,17 +258,18 @@ fun showdrawFigure() {
                             alignment = Alignment.Center,
                             modifier = Modifier
                                 .padding(8.dp)
-                                .size(96.dp)
+                                .size(64.dp)
                                 .clip(CircleShape)
+                                .border(2.dp,Color.White, CircleShape)
                             )
                     Text(
-                        text = "전기톱맨",
+                        text = stringResource(com.example.androidkotlin.R.string.전기톱맨),
                         fontSize = 16.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "Korean",
+                        text = stringResource(com.example.androidkotlin.R.string.Korean),
                         fontSize = 14.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
